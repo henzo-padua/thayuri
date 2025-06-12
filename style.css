@@ -1,0 +1,211 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    rgba(254, 246, 246, 0.93) 0%,
+    rgb(240, 146, 219) 100%
+  );
+  position: relative;
+  color: #6b2a35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.84);
+  max-width: 420px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px 35px;
+  box-shadow: 0 12px 40px rgba(255, 105, 135, 0.3);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #c92c48;
+  text-shadow: 1px 1px 4px #f9a3ad;
+}
+
+.initial-message {
+  font-size: 1.2rem;
+  color: #9e3b4a;
+  margin-bottom: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+button {
+  background: linear-gradient(45deg, #ff7a82, #ff375f);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 70, 90, 0.5);
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  letter-spacing: 0.04em;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 12px 30px rgba(255, 70, 90, 0.7);
+}
+
+.hidden {
+  display: none;
+}
+
+#surpriseMessage {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #7e3a44;
+  font-weight: 500;
+  line-height: 1.6;
+  background: #ffe4e7;
+  padding: 18px 22px;
+  border-radius: 18px;
+  box-shadow: inset 0 0 15px #fbb0b8;
+  user-select: text;
+}
+
+/* Seção de fotos e poemas */
+
+.section-title {
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #bf2f4b;
+  text-shadow: 1px 1px 3px #fbb0b8;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+  margin: 30px auto;
+  border-radius: 25px;
+  overflow: hidden;
+ box-shadow: 0 6px 25px rgba(255, 99, 122, 0.43);
+  border: 3px solid #ffc9d2;
+  background:rgb(254, 210, 216);
+  padding: 10px;
+}
+
+.carousel-media {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-media img,
+.carousel-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção sem distorcer */
+  border-radius: 25px;
+  display: block;
+  background-color: #fff0f0; /* fundo neutro */
+}
+
+.carousel-media video {
+  outline: none;
+  border: none;
+}
+
+/* Botões de navegação */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d22c49;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 70, 90, 0.4);
+  transition: all 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+
+/* Poema */
+
+.poem {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #8f3b4d;
+  line-height: 1.5;
+  user-select: text;
+  min-height: 70px;
+  padding: 0 10px;
+  letter-spacing: 0.02em;
+}
+
+/* Canvas do coração */
+
+#heartsCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Responsividade simples */
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 90vw;
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    align-content: center;
+    width: 80vw;
+    height: 315px;
+    margin: 30px auto;
+  }
+}

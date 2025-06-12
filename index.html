@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <title>Feliz Dia dos Namorados ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Feliz Dia dos Namorados, meu amor! 💖</h1>
+        <p class="initial-message">Você é a melhor parte dos meus dias.</p>
+        <button id="surpriseBtn">Clique para uma surpresa</button>
+        <p id="surpriseMessage" class="hidden">
+            Eu te amo mais do que as palavras podem expressar. Obrigado por ser quem você é. ❤️<br>
+            Vamos continuar construindo nossa história, um dia de cada vez, sempre com amor.
+        </p>
+
+        <h2 class="section-title">📸 Nossos Momentos</h2>
+       <div class="carousel">
+  <div class="carousel-media">
+    <script>
+  const carouselMedia = document.querySelector('.carousel-media');
+
+  const mediaList = [
+    { type: 'image', src: '/image/foto1.jpg' },
+    { type: 'image', src: '/image/foto2.jpg' },
+    { type: 'image', src: '/image/foto3.jpg' },
+    { 
+      type: 'video', 
+      src: '/image/video1.mp4', 
+      poster: '/image/poster-video.jpg' 
+    }
+  ];
+
+  let currentIndex = 0;
+
+  function showMedia(index) {
+    const media = mediaList[index];
+    carouselMedia.innerHTML = ''; // limpa
+
+    if (media.type === 'image') {
+      const img = document.createElement('img');
+      img.src = media.src;
+      img.alt = 'Foto do casal';
+      carouselMedia.appendChild(img);
+    } else if (media.type === 'video') {
+      const video = document.createElement('video');
+      video.controls = true;
+      video.poster = media.poster;
+      video.innerHTML = `
+        <source src="${media.src}" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      `;
+      carouselMedia.appendChild(video);
+    }
+  }
+
+  function previousMedia() {
+    currentIndex = (currentIndex - 1 + mediaList.length) % mediaList.length;
+    showMedia(currentIndex);
+  }
+
+  function nextMedia() {
+    currentIndex = (currentIndex + 1) % mediaList.length;
+    showMedia(currentIndex);
+  }
+
+  // Exibir o primeiro item ao carregar
+  showMedia(currentIndex);
+</script>
+
+  </div>
+  <div class="carousel-buttons">
+    <button onclick="previousMedia()">⟨</button>
+    <button onclick="nextMedia()">⟩</button>
+  </div>
+</div>
+
+
+        <h2 class="section-title">💌 Poema para você</h2>
+        <button id="generatePoem">Gerar Poema</button>
+        <p id="poem" class="poem"></p>
+    </div>
+
+    <canvas id="heartsCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
